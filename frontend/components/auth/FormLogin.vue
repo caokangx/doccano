@@ -7,17 +7,16 @@
   >
     <template #content>
       <v-form v-model="valid">
-        <v-alert
+        <!-- <v-alert
           v-show="showError"
           v-model="showError"
           type="error"
           dismissible
         >
           {{ $t('errors.invalidUserOrPass') }}
-        </v-alert>
+        </v-alert> -->
         <v-text-field
           v-model="username"
-          :rules="userNameRules($t('rules.userNameRules'))"
           :label="$t('user.username')"
           name="username"
           prepend-icon="person"
@@ -28,7 +27,6 @@
         <v-text-field
           id="password"
           v-model="password"
-          :rules="passwordRules($t('rules.passwordRules'))"
           :label="$t('user.password')"
           name="password"
           prepend-icon="lock"

@@ -1,20 +1,20 @@
 <template>
   <v-app>
-    <the-header />
+    <!-- <the-header /> -->
     <nuxt />
-    <the-footer />
+    <!-- <the-footer /> -->
   </v-app>
 </template>
 
 <script>
 import TheFooter from '@/components/layout/TheFooter'
-import TheHeader from '@/components/layout/TheHeader'
+// import TheHeader from '@/components/layout/TheHeader'
 
 export default {
   middleware: ['check-auth'],
   components: {
-    TheFooter,
-    TheHeader
+    // TheFooter,
+    // TheHeader
   }
 }
 </script>

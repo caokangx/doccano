@@ -1,21 +1,31 @@
 <template>
-  <v-main>
-    <the-top-banner />
-    <feature-cards />
-    <the-bottom-banner />
-  </v-main>
+  <v-app id="inspire">
+    <v-main>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center">
+          <v-col cols="12" sm="8" md="4">
+            <form-login
+              :login="authenticateUser"
+            />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
-<script>
-import FeatureCards from '@/components/layout/FeatureCards'
-import TheTopBanner from '@/components/layout/TheTopBanner'
-import TheBottomBanner from '@/components/layout/TheBottomBanner'
+<script lang="ts">
+import Vue from 'vue'
+import { mapActions } from 'vuex'
+import FormLogin from '@/components/auth/FormLogin.vue'
 
-export default {
+export default Vue.extend({
   components: {
-    FeatureCards,
-    TheTopBanner,
-    TheBottomBanner
+    FormLogin
+  },
+
+  methods: {
+    ...mapActions('auth', ['authenticateUser'])
   }
-}
+})
 </script>
