@@ -9,13 +9,13 @@
       to="/"
       style="line-height:0;"
     >
-      <img src="~/assets/icon.png" height="48">
+      <!-- <img src="~/assets/icon.png" height="48"> -->
     </nuxt-link>
     <v-toolbar-title
       v-if="!isAuthenticated"
       class="ml-2 d-none d-sm-flex"
     >
-      doccano
+      label
     </v-toolbar-title>
     <v-btn
       v-if="isAuthenticated && isIndividualProject"
@@ -30,7 +30,7 @@
     </v-btn>
     <div class="flex-grow-1" />
     <the-color-mode-switcher />
-    <locale-menu />
+    <!-- <locale-menu /> -->
     <v-btn
       v-if="isAuthenticated"
       text
@@ -99,12 +99,12 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import TheColorModeSwitcher from './TheColorModeSwitcher'
-import LocaleMenu from './LocaleMenu'
+// import LocaleMenu from './LocaleMenu'
 
 export default {
   components: {
     TheColorModeSwitcher,
-    LocaleMenu
+    // LocaleMenu
   },
 
   data() {

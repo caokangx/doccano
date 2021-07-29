@@ -7,15 +7,15 @@
       <v-layout align-center>
         <v-flex text-center>
           <h1 class="display-2 primary--text">
-            Whoops, 404
+            404
           </h1>
-          <p>The page you were looking for does not exist</p>
+          <p>您所访问的页面不存在</p>
           <v-btn
             to="/"
             outlined
             color="primary"
           >
-            Get me out of here!
+            回到首页
           </v-btn>
         </v-flex>
       </v-layout>

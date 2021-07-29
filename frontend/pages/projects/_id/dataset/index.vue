@@ -14,14 +14,14 @@
         {{ $t('generic.delete') }}
       </v-btn>
       <v-spacer />
-      <v-btn
+      <!-- <v-btn
         :disabled="!item.count"
         class="text-capitalize"
         color="error"
         @click="dialogDeleteAll=true"
       >
         {{ $t('generic.deleteAll') }}
-      </v-btn>
+      </v-btn> -->
       <v-dialog v-model="dialogDelete">
         <form-delete
           :selected="selected"

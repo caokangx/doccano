@@ -63,12 +63,12 @@ export default {
   computed: {
     filteredItems() {
       const items = [
-        {
-          icon: 'mdi-home',
-          text: this.$t('projectHome.home'),
-          link: '',
-          isVisible: true
-        },
+        // {
+        //   icon: 'mdi-home',
+        //   text: this.$t('projectHome.home'),
+        //   link: '',
+        //   isVisible: true
+        // },
         {
           icon: 'mdi-database',
           text: this.$t('dataset.dataset'),
@@ -93,18 +93,18 @@ export default {
           link: 'members',
           isVisible: this.role.is_project_admin
         },
-        {
-          icon: 'mdi-comment-account-outline',
-          text: 'Comments',
-          link: 'comments',
-          isVisible: this.role.is_project_admin
-        },
-        {
-          icon: 'mdi-book-open-outline',
-          text: this.$t('guideline.guideline'),
-          link: 'guideline',
-          isVisible: this.role.is_project_admin
-        },
+        // {
+        //   icon: 'mdi-comment-account-outline',
+        //   text: 'Comments',
+        //   link: 'comments',
+        //   isVisible: this.role.is_project_admin
+        // },
+        // {
+        //   icon: 'mdi-book-open-outline',
+        //   text: this.$t('guideline.guideline'),
+        //   link: 'guideline',
+        //   isVisible: this.role.is_project_admin
+        // },
         {
           icon: 'mdi-chart-bar',
           text: this.$t('statistics.statistics'),
