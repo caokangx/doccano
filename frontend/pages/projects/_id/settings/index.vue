@@ -1,12 +1,8 @@
 <template>
   <v-card>
-    <v-tabs
-      v-model="tab"
-    >
+    <v-tabs v-model="tab">
       <v-tabs-slider color="primary" />
-      <v-tab href="#tab-project" class="text-capitalize">
-        Project
-      </v-tab>
+      <v-tab href="#tab-project" class="text-capitalize"> Project </v-tab>
       <v-tab href="#tab-auto-labeling" class="text-capitalize">
         Auto Labeling
       </v-tab>
@@ -25,26 +21,28 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import FormUpdate from '@/components/project/FormUpdate.vue'
-import ConfigList from '@/components/configAutoLabeling/ConfigList.vue'
+import Vue from "vue";
+import FormUpdate from "@/components/project/FormUpdate.vue";
+import ConfigList from "@/components/configAutoLabeling/ConfigList.vue";
 
 export default Vue.extend({
-  layout: 'project',
+  layout: "project",
 
   components: {
     ConfigList,
-    FormUpdate
+    FormUpdate,
   },
 
   data() {
     return {
-      tab: null
-    }
+      tab: null,
+    };
   },
 
   validate({ params }) {
-    return /^\d+$/.test(params.id)
-  }
-})
+    return /^\d+$/.test(params.id);
+  },
+});
 </script>
+
+

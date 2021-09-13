@@ -5,19 +5,16 @@
       nuxt
       @click="toLabeling"
     >
-      <v-icon left>
-        mdi-play-circle-outline
-      </v-icon>
-      {{ $t('home.startAnnotation') }}
+      <v-icon left> mdi-play-circle-outline </v-icon>
+      {{ $t("home.startAnnotation") }}
     </v-btn>
-    <v-list-item-group
-      v-model="selected"
-      mandatory
-    >
+    <v-list-item-group v-model="selected" mandatory>
       <v-list-item
         v-for="(item, i) in filteredItems"
         :key="i"
-        @click="$router.push(localePath(`/projects/${$route.params.id}/${item.link}`))"
+        @click="
+          $router.push(localePath(`/projects/${$route.params.id}/${item.link}`))
+        "
       >
         <v-list-item-action>
           <v-icon>
@@ -39,25 +36,25 @@ export default {
   props: {
     link: {
       type: String,
-      default: '',
-      required: true
+      default: "",
+      required: true,
     },
     role: {
       type: Object,
       default: () => {},
-      required: true
+      required: true,
     },
     project: {
       type: Object,
       default: () => {},
-      required: true
-    }
+      required: true,
+    },
   },
 
   data() {
     return {
-      selected: 0
-    }
+      selected: 0,
+    };
   },
 
   computed: {
@@ -70,28 +67,28 @@ export default {
         //   isVisible: true
         // },
         {
-          icon: 'mdi-database',
-          text: this.$t('dataset.dataset'),
-          link: 'dataset',
-          isVisible: this.role.is_project_admin
+          icon: "mdi-database",
+          text: this.$t("dataset.dataset"),
+          link: "dataset",
+          isVisible: this.role.is_project_admin,
         },
         {
-          icon: 'label',
-          text: this.$t('labels.labels'),
-          link: 'labels',
-          isVisible: this.role.is_project_admin && this.project.canDefineLabel
+          icon: "label",
+          text: this.$t("labels.labels"),
+          link: "labels",
+          isVisible: this.role.is_project_admin && this.project.canDefineLabel,
         },
+        // {
+        //   icon: 'label',
+        //   text: 'Relations',
+        //   link: 'links',
+        //   isVisible: this.role.is_project_admin && this.project.canDefineRelation
+        // },
         {
-          icon: 'label',
-          text: 'Relations',
-          link: 'links',
-          isVisible: this.role.is_project_admin && this.project.canDefineRelation
-        },
-        {
-          icon: 'person',
-          text: this.$t('members.members'),
-          link: 'members',
-          isVisible: this.role.is_project_admin
+          icon: "person",
+          text: this.$t("members.members"),
+          link: "members",
+          isVisible: this.role.is_project_admin,
         },
         // {
         //   icon: 'mdi-comment-account-outline',
@@ -106,30 +103,37 @@ export default {
         //   isVisible: this.role.is_project_admin
         // },
         {
-          icon: 'mdi-chart-bar',
-          text: this.$t('statistics.statistics'),
-          link: 'statistics',
-          isVisible: this.role.is_project_admin
+          icon: "mdi-chart-bar",
+          text: this.$t("statistics.statistics"),
+          link: "statistics",
+          isVisible: this.role.is_project_admin,
         },
         {
-          icon: 'mdi-cog',
-          text: this.$t('settings.title'),
-          link: 'settings',
-          isVisible: this.role.is_project_admin
-        }
-      ]
-      return items.filter(item => item.isVisible)
-    }
+          icon: "mdi-qrcode",
+          text: this.$t("qrcode.qrcode"),
+          link: "qrcode",
+          isVisible: this.role.is_project_admin,
+        },   
+        {
+          icon: "mdi-cog",
+          text: this.$t("settings.title"),
+          link: "settings",
+          isVisible: this.role.is_project_admin,
+        },
+      ];
+      return items.filter((item) => item.isVisible);
+    },
   },
 
   methods: {
     toLabeling() {
-      const query = this.$services.option.findOption(this.$route.params.id)
+      // console.log(this.$t)
+      const query = this.$services.option.findOption(this.$route.params.id);
       this.$router.push({
         path: this.localePath(this.link),
-        query
-      })
-    }
-  }
-}
+        query,
+      });
+    },
+  },
+};
 </script>

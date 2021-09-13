@@ -201,3 +201,5 @@ export default Vue.extend({
   width: 800px;
 }
 </style>
+
+

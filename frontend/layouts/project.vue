@@ -6,12 +6,7 @@
       </template>
     </the-header>
 
-    <v-navigation-drawer
-      v-model="drawerLeft"
-      app
-      clipped
-      color=""
-    >
+    <v-navigation-drawer v-model="drawerLeft" app clipped color="">
       <the-side-bar
         :link="getLink"
         :role="getCurrentUserRole"
@@ -20,13 +15,8 @@
     </v-navigation-drawer>
 
     <v-main>
-      <v-container
-        fluid
-        fill-height
-      >
-        <v-layout
-          justify-center
-        >
+      <v-container fluid fill-height>
+        <v-layout justify-center>
           <v-flex fill-height>
             <nuxt />
           </v-flex>
@@ -37,26 +27,30 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import TheSideBar from '~/components/layout/TheSideBar'
-import TheHeader from '~/components/layout/TheHeader'
+import { mapGetters } from "vuex";
+import TheSideBar from "~/components/layout/TheSideBar";
+import TheHeader from "~/components/layout/TheHeader";
 
 export default {
-  middleware: ['check-auth', 'auth', 'check-admin'],
+  middleware: ["check-auth", "auth", "check-admin"],
 
   components: {
     TheSideBar,
-    TheHeader
+    TheHeader,
   },
 
   data() {
     return {
-      drawerLeft: null
-    }
+      drawerLeft: null,
+    };
   },
 
   computed: {
-    ...mapGetters('projects', ['getLink', 'getCurrentUserRole', 'currentProject'])
-  }
-}
+    ...mapGetters("projects", [
+      "getLink",
+      "getCurrentUserRole",
+      "currentProject",
+    ]),
+  },
+};
 </script>
