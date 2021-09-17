@@ -17,20 +17,20 @@ Generic_AudioFile = """
 """
 
 Generic_TextLine = """
-Terrible customer service.
+电冰箱起火导致爆炸
 Really great transaction.
 Great price.
 """
 
 Category_CSV = """
 column_data,column_label
-"Terrible customer service.","negative"
+"电冰箱起火导致爆炸","冰箱"
 "Really great transaction.","positive"
 "Great price.","positive"
 """
 
 Category_fastText = """
-__label__negative Terrible customer service.
+__label__negative 电冰箱起火导致爆炸
 __label__positive Really great transaction.
 __label__positive Great price.
 """
@@ -38,14 +38,14 @@ __label__positive Great price.
 Category_JSON = """
 [
     {
-        "column_data": "Terrible customer service.",
-        "column_label": ["negative"]
+        "column_data": "电冰箱起火导致爆炸",
+        "column_label": ["冰箱"]
     }
 ]
 """
 
 Category_JSONL = """
-{"column_data": "Terrible customer service.", "column_label": ["negative"]}
+{"column_data": "电冰箱起火导致爆炸", "column_label": ["冰箱"]}
 {"column_data": "Really great transaction.", "column_label": ["positive"]}
 {"column_data": "Great price.", "column_label": ["positive"]}
 """

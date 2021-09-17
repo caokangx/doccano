@@ -100,11 +100,11 @@ export default Vue.extend({
           value: 'meta',
           sortable: false
         },
-        {
-          text: this.$t('comments.comments'),
-          value: 'commentCount',
-          sortable: false
-        },
+        // {
+        //   text: this.$t('comments.comments'),
+        //   value: 'commentCount',
+        //   sortable: false
+        // },
         {
           text: this.$t('dataset.action'),
           value: 'action',

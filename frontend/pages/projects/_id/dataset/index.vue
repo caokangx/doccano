@@ -36,11 +36,11 @@
           @remove="removeAll"
         />
       </v-dialog>
-      <v-dialog v-model="dialogDownload">
+      <!-- <v-dialog v-model="dialogDownload">
         <form-download
           @cancel="dialogDownload=false"
         />
-      </v-dialog>
+      </v-dialog> -->
     </v-card-title>
     <image-list
       v-if="isImageTask"
@@ -95,7 +95,7 @@ export default Vue.extend({
     ImageList,
     FormDelete,
     FormDeleteBulk,
-    FormDownload,
+    // FormDownload,
   },
 
   async fetch() {

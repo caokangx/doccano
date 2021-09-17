@@ -27,14 +27,14 @@
           prepend-icon="mdi-keyboard"
           @input="updateValue('suffixKey', $event)"
         />
-        <v-color-picker
+        <!-- <v-color-picker
           :value="backgroundColor"
           :rules="[rules.required]"
-          show-swatches
+
           hide-mode-switch
           width="800"
           @input="updateValue('backgroundColor', $event)"
-        />
+        /> -->
       </v-form>
     </template>
   </base-card>
@@ -80,7 +80,7 @@ export default Vue.extend({
     return {
       valid: false,
       rules: {
-        required: (v: string) => !!v || 'Required',
+        required: (v: string) => !!v || '必填选项',
         // @ts-ignore
         counter: (v: string) => (v && v.length <= 100) || this.$t('rules.labelNameRules').labelLessThan100Chars,
         // @ts-ignore

@@ -328,7 +328,7 @@ class RoleMapping(models.Model):
         other_rolemappings = self.project.role_mappings.exclude(id=self.id)
 
         if other_rolemappings.filter(user=self.user, project=self.project).exists():
-            message = 'This user is already assigned to a role in this project.'
+            message = '用户已添加'
             raise ValidationError(message)
 
     class Meta:

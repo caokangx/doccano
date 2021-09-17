@@ -80,9 +80,9 @@ export default Vue.extend({
       return [
         { text: this.$t('generic.name'), value: 'name' },
         { text: this.$t('generic.description'), value: 'description' },
-        { text: this.$t('generic.type'), value: 'projectType' },
-        { text: 'Updated', value: 'updatedAt' },
-        { text: 'Tags', value: 'tags'}
+        // { text: this.$t('generic.type'), value: 'projectType' },
+        { text: '最近更新', value: 'updatedAt' },
+        { text: '标签列表', value: 'tags'}
       ]
     }
   }

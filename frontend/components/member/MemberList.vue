@@ -71,8 +71,8 @@ export default Vue.extend({
     headers() {
       return [
         { text: this.$t('generic.name'), value: 'username' },
-        { text: this.$t('members.role'), value: 'rolename' },
-        { text: 'Actions', value: 'actions', sortable: false }
+        // { text: this.$t('members.role'), value: 'rolename' },
+        // { text: 'Actions', value: 'actions', sortable: false }
       ]
     }
   } 

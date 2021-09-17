@@ -25,16 +25,16 @@ export default Vue.extend({
           icon: 'mdi-pencil',
           event: 'create'
         },
-        {
-          title: this.$t('labels.importLabels'),
-          icon: 'mdi-upload',
-          event: 'upload'
-        },
-        {
-          title: this.$t('labels.exportLabels'),
-          icon: 'mdi-download',
-          event: 'download'
-        }
+        // {
+        //   title: this.$t('labels.importLabels'),
+        //   icon: 'mdi-upload',
+        //   event: 'upload'
+        // },
+        // {
+        //   title: this.$t('labels.exportLabels'),
+        //   icon: 'mdi-download',
+        //   event: 'download'
+        // }
       ]
     }
   }

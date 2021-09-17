@@ -11,7 +11,7 @@ export default {
   add: '增加',
   delete: '删除',
   search: '搜索',
-  name: '名称',
+  name: '用户名',
   import: '导入',
   export: '导出',
   description: '描述',

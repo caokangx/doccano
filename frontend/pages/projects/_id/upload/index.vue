@@ -14,7 +14,7 @@
         v-model="selected"
         :items="catalog"
         item-text="name"
-        label="File format"
+        label="数据格式"
         outlined
       />
       <v-form v-model="valid">
@@ -87,7 +87,7 @@
         :disabled="isDisabled"
         @click="injest"
       >
-        Injest
+        导入数据
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -124,7 +124,7 @@ export default {
         { text: 'Message', value: 'message' }
       ],
       requiredRules: [
-        v => !!v || 'Field value is required'
+        v => !!v || '值不能为空'
       ],
       server: {
         url: '/v1/fp',

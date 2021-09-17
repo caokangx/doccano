@@ -1,6 +1,6 @@
 export default {
   labels: '标签',
-  shortkey: '短键',
+  shortkey: 'value',
   color: '颜色',
   createLabel: '创建标签',
   importLabels: '导入标签',

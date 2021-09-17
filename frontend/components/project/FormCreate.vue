@@ -26,7 +26,7 @@
           required
           @input="updateValue('description', $event)"
         />
-        <v-select
+        <!-- <v-select
           :value="projectType"
           :items="projectTypes"
           :rules="projectTypeRules($t('rules.projectTypeRules'))"
@@ -41,8 +41,8 @@
           <template v-slot:selection="props">
             {{ translateTypeName(props.item, $t('overview.projectTypes')) }}
           </template>
-        </v-select>
-        <v-checkbox
+        </v-select> -->
+        <!-- <v-checkbox
           v-if="hasSingleLabelOption"
           :value="singleClassClassification"
           label="Allow single label"
@@ -57,7 +57,7 @@
           :value="enableShareAnnotation"
           :label="$t('overview.shareAnnotations')"
           @change="updateValue('enableShareAnnotation', $event === true)"
-        />
+        /> -->
       </v-form>
     </template>
   </base-card>

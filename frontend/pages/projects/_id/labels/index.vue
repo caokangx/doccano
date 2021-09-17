@@ -3,8 +3,6 @@
     <v-card-title>
       <action-menu
         @create="dialogCreate=true"
-        @upload="dialogUpload=true"
-        @download="download"
       />
       <v-btn
         class="text-capitalize ms-2"

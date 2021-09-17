@@ -114,12 +114,12 @@ export default {
           link: "qrcode",
           isVisible: this.role.is_project_admin,
         },   
-        {
-          icon: "mdi-cog",
-          text: this.$t("settings.title"),
-          link: "settings",
-          isVisible: this.role.is_project_admin,
-        },
+        // {
+        //   icon: "mdi-cog",
+        //   text: this.$t("settings.title"),
+        //   link: "settings",
+        //   isVisible: this.role.is_project_admin,
+        // },
       ];
       return items.filter((item) => item.isVisible);
     },

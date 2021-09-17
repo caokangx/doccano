@@ -46,7 +46,7 @@
       </v-card>
     </template>
     <template v-slot:sidebar>
-      <list-metadata :metadata="example.meta" />
+      <!-- <list-metadata :metadata="example.meta" /> -->
     </template>
   </layout-text>
 </template>

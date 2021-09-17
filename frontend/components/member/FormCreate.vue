@@ -22,13 +22,12 @@
           :rules="[rules.userRequired]"
           return-object
         />
-        <v-select
+        <!-- <v-select
           v-model="role"
           :items="roles"
           item-text="rolename"
           item-value="id"
           :label="$t('members.role')"
-          :rules="[rules.roleRequired]"
           return-object
           prepend-icon="mdi-credit-card-outline"
         >
@@ -38,7 +37,7 @@
           <template v-slot:selection="props">
             {{ $translateRole(props.item.rolename, $t('members.roles')) }}
           </template>
-        </v-select>
+        </v-select> -->
         <v-alert
           v-show="errorMessage"
           prominent
@@ -92,8 +91,8 @@ export default Vue.extend({
       roles: [] as RoleDTO[],
       username: '',
       rules: {
-        userRequired: (v: UserDTO) => !!v && !!v.username || 'Required',
-        roleRequired: (v: RoleDTO) => !!v && !!v.rolename || 'Required'
+        userRequired: (v: UserDTO) => !!v && !!v.username || '必填选项',
+        // roleRequired: (v: RoleDTO) => !!v && !!v.rolename || 'Required'
       }
     }
   },
@@ -115,12 +114,13 @@ export default Vue.extend({
     role: {
       get(): RoleDTO {
         return {
-          id: this.value.role,
-          rolename: this.value.rolename
+          id: 2,
+          rolename: "annotator"
         }
       },
       set(val: MemberDTO) {
-        const role = { role: val.id, rolename: val.rolename }
+        console.log('===', val);
+        const role = { role: 2, rolename: 'annotator' }
         this.$emit('input', { ...this.value, ...role })
       }
     }

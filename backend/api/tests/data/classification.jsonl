@@ -1,4 +1,4 @@
 {"text": "example", "labels": ["positive"], "meta": {"wikiPageID": 1}}
-{"text": "example", "labels": ["positive", "negative"], "meta": {"wikiPageID": 2}}
-{"text": "example", "labels": ["negative"], "meta": {"wikiPageID": 3}}
+{"text": "example", "labels": ["positive", "冰箱"], "meta": {"wikiPageID": 2}}
+{"text": "example", "labels": ["冰箱"], "meta": {"wikiPageID": 3}}
 {"text": "example", "labels": ["neutral"], "meta": {"wikiPageID": 4}}

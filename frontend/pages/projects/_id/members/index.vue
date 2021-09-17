@@ -81,9 +81,9 @@ export default Vue.extend({
       } as MemberDTO,
       defaultItem: {
         user: -1,
-        role: -1,
+        role: 2,
         username: '',
-        rolename: ''
+        rolename: 'annotator'
       } as MemberDTO,
       items: [] as MemberDTO[],
       selected: [] as MemberDTO[],
@@ -104,7 +104,7 @@ export default Vue.extend({
   methods: {
     async create() {
       try {
-        await this.$services.member.create(this.projectId, this.editedItem)
+        await this.$services.member.create(this.projectId, {...this.editedItem, role: 2, rolename: 'annotator'})
         this.close()
         this.$fetch()
       } catch(e) {

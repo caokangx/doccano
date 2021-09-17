@@ -5,7 +5,7 @@
     flat
   >
     <v-row no-gutters>
-      <v-btn-toggle>
+      <!-- <v-btn-toggle>
         <button-review
           v-if="showApproveButton"
           :is-reviewd="isReviewd"
@@ -58,8 +58,8 @@
             @click:cancel="dialogClear=false"
           />
         </v-dialog>
-      </v-btn-toggle>
-      <slot />
+      </v-btn-toggle> -->
+      <!-- <slot /> -->
       <v-spacer />
       <button-pagination
         :value="page"
@@ -90,17 +90,17 @@ import FormGuideline from './forms/FormGuideline.vue'
 
 export default Vue.extend({
   components: {
-    ButtonAutoLabeling,
-    ButtonClear,
-    ButtonComment,
-    ButtonFilter,
-    ButtonGuideline,
+    // ButtonAutoLabeling,
+    // ButtonClear,
+    // ButtonComment,
+    // ButtonFilter,
+    // ButtonGuideline,
     ButtonPagination,
-    ButtonReview,
-    FormAutoLabeling,
-    FormClearLabel,
-    FormComment,
-    FormGuideline
+    // ButtonReview,
+    // FormAutoLabeling,
+    // FormClearLabel,
+    // FormComment,
+    // FormGuideline
   },
 
   props: {

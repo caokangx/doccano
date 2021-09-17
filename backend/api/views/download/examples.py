@@ -1,12 +1,12 @@
 Category_CSV = """
 text,label
-"Terrible customer service.","negative"
+"电冰箱起火导致爆炸","冰箱"
 "Really great transaction.","positive"
 "Great price.","positive"
 """
 
 Category_fastText = """
-__label__negative Terrible customer service.
+__label__negative 电冰箱起火导致爆炸
 __label__positive Really great transaction.
 __label__positive Great price.
 """
@@ -14,14 +14,14 @@ __label__positive Great price.
 Category_JSON = """
 [
     {
-        "text": "Terrible customer service.",
-        "label": ["negative"]
+        "text": "电冰箱起火导致爆炸",
+        "label": ["冰箱"]
     }
 ]
 """
 
 Category_JSONL = """
-{"text": "Terrible customer service.", "label": ["negative"]}
+{"text": "电冰箱起火导致爆炸", "label": ["冰箱"]}
 {"text": "Really great transaction.", "label": ["positive"]}
 {"text": "Great price.", "label": ["positive"]}
 """
