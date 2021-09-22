@@ -1,5 +1,9 @@
-export default function({ store, redirect }) {
+export default function({ route, store, redirect }) {
   if (!store.getters['auth/isAuthenticated']) {
-    redirect('/auth')
+    // console.log(route.path)
+    redirect({
+      path: '/',
+      query: {redirect: route.path}
+    })
   }
 }

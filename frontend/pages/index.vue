@@ -21,9 +21,20 @@ export default Vue.extend({
   components: {
     FormLogin,
   },
-
+  // mounted() {
+  //   this.print()
+  // },
   methods: {
     ...mapActions("auth", ["authenticateUser"]),
+    // print() {
+    //   console.log(this.$route.fullPath)
+    // }
   },
+
+  // middleware({store, redirect}) {
+  //   if(!store.state.getters['auth/isAuthenticated']) {
+  //     console.log('111')
+  //   }
+  // }
 });
 </script>

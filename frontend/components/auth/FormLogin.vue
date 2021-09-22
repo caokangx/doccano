@@ -72,7 +72,14 @@ export default Vue.extend({
           username: this.username,
           password: this.password
         })
-        this.$router.push(this.localePath('/projects'))
+        // console.log(this.$route.fullPath.slice(25))
+        // TODO: 匹配url
+        if(this.$route.fullPath === '/'){
+          this.$router.push(this.localePath('/projects'))
+        } else {
+          const str = '/projects/' + this.$route.fullPath.slice(25)
+          this.$router.push(this.localePath(str))
+        }
       } catch {
         this.showError = true
       }

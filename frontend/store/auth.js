@@ -1,7 +1,8 @@
 export const state = () => ({
   username: null,
   id: null,
-  isAuthenticated: false
+  isAuthenticated: false,
+  redirectPath: null
 })
 
 export const mutations = {
@@ -16,6 +17,9 @@ export const mutations = {
   },
   setAuthenticated(state, isAuthenticated) {
     state.isAuthenticated = isAuthenticated
+  },
+  setRedirectPath(state, path) {
+    state.redirectPath = path
   }
 }
 
@@ -28,6 +32,9 @@ export const getters = {
   },
   getUserId(state) {
     return state.id
+  },
+  getRedirectPath(state) {
+    return state.redirectPath
   }
 }
 

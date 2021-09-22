@@ -106,5 +106,5 @@ def is_in_role(role_name, user_id, project_id):
     ).exists()
 
 
-IsInProjectReadOnlyOrAdmin = (IsAnnotatorAndReadOnly | IsAnnotationApproverAndReadOnly | IsProjectAdmin)
-IsInProjectOrAdmin = (IsAnnotator | IsAnnotationApprover | IsProjectAdmin)
+IsInProjectReadOnlyOrAdmin = (IsAnnotatorAndReadOnly or IsAnnotationApproverAndReadOnly or IsProjectAdmin)
+IsInProjectOrAdmin = (IsAnnotator or IsAnnotationApprover or IsProjectAdmin)
