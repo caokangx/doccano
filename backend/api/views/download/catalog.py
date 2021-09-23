@@ -72,9 +72,9 @@ class Options:
 
 # Text Classification
 Options.register(DOCUMENT_CLASSIFICATION, CSV, OptionDelimiter, examples.Category_CSV)
-Options.register(DOCUMENT_CLASSIFICATION, FastText, OptionNone, examples.Category_fastText)
+# Options.register(DOCUMENT_CLASSIFICATION, FastText, OptionNone, examples.Category_fastText)
 Options.register(DOCUMENT_CLASSIFICATION, JSON, OptionNone, examples.Category_JSON)
-Options.register(DOCUMENT_CLASSIFICATION, JSONL, OptionNone, examples.Category_JSONL)
+# Options.register(DOCUMENT_CLASSIFICATION, JSONL, OptionNone, examples.Category_JSONL)
 
 # Sequence Labeling
 Options.register(SEQUENCE_LABELING, JSONL, OptionNone, examples.Offset_JSONL)

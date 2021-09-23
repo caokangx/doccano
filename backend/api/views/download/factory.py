@@ -23,8 +23,8 @@ def create_writer(format: str) -> Type[writer.BaseWriter]:
     mapping = {
         catalog.CSV.name: writer.CsvWriter,
         catalog.JSON.name: writer.JSONWriter,
-        catalog.JSONL.name: writer.JSONLWriter,
-        catalog.FastText.name: writer.FastTextWriter,
+        # catalog.JSONL.name: writer.JSONLWriter,
+        # catalog.FastText.name: writer.FastTextWriter,
     }
     if format not in mapping:
         ValueError(f'Invalid format: {format}')

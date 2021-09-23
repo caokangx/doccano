@@ -1,9 +1,9 @@
 <template>
   <base-card
     :disabled="!valid"
-    title="Export Data"
-    agree-text="Export"
-    cancel-text="Cancel"
+    title="导出数据"
+    agree-text="导出"
+    cancel-text="取消"
     @agree="downloadRequest"
     @cancel="cancel"
   >
@@ -31,20 +31,20 @@
             :value="format"
           />
         </v-radio-group>
-        <v-sheet
+        <!-- <v-sheet
           v-if="selectedFormat"
           :dark="!$vuetify.theme.dark"
           :light="$vuetify.theme.dark"
           class="mb-5 pa-5"
         >
           <pre>{{ selectedFormat.example.trim() }}</pre>
-        </v-sheet>
-        <h2>{{ $t('dataset.exportDataMessage2') }}</h2>
+        </v-sheet> -->
+        <!-- <h2>{{ $t('dataset.exportDataMessage2') }}</h2>
         <v-checkbox
           v-model="exportApproved"
           label="Export only approved documents"
           hide-details
-        />
+        /> -->
       </v-form>
     </template>
   </base-card>

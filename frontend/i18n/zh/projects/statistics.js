@@ -1,5 +1,5 @@
 export default {
-  statistics: '统计',
+  statistics: '完成情况统计',
   progress: [
     '已完成',
     '未完成'
