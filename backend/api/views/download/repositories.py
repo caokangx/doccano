@@ -1,11 +1,16 @@
 import abc
 import itertools
-from collections import defaultdict
+from collections import defaultdict, Counter
 from typing import Dict, Iterator, List
-
 from ...models import Example, Project
 from .data import Record
+import logging
+logging.basicConfig(
+    format='%(asctime)s-%(pathname)s[%(lineno)d] - %(levelname)s: %(message)s',
+    level=logging.INFO
+)
 
+logger = logging.getLogger(__name__)
 
 class BaseRepository(abc.ABC):
 
@@ -86,7 +91,11 @@ class TextRepository(BaseRepository):
             label_per_user = self.label_per_user(doc)
             if self.project.collaborative_annotation:
                 label_per_user = self.reduce_user(label_per_user)
-            for user, label in label_per_user.items():
+            counter_by_user = self.counter_by_user(label_per_user)
+            logger.info(counter_by_user)
+            label_merge = dict(label_per_user)
+            label_merge.update(counter_by_user)
+            for user, label in label_merge.items():
                 yield Record(
                     id=doc.id,
                     data=doc.text,
@@ -117,6 +126,13 @@ class TextRepository(BaseRepository):
         value = list(itertools.chain(*label_per_user.values()))
         return {'all': value}
 
+    def counter_by_user(self, label_per_user: Dict[str, List]):
+        # logger.info(label_per_user)
+        value = list(itertools.chain(*label_per_user.values()))
+        value = Counter(value).most_common(1)[0][0].split(' ')
+        # logger.info(value)
+        return {'all': value}
+
 
 class TextClassificationRepository(TextRepository):
 
@@ -131,6 +147,13 @@ class TextClassificationRepository(TextRepository):
         for a in doc.categories.all():
             label_per_user[a.user.username].append(a.label.text)
         return label_per_user
+
+    # def label_per_text(self, doc) -> Dict:
+    #     label_per_text = defaultdict(list)
+    #     for a in doc.categories.all():
+    #         label_per_text[a.user.username].append(a.label.text)
+    #     return label_per_text
+
 
 
 class SequenceLabelingRepository(TextRepository):
@@ -147,6 +170,7 @@ class SequenceLabelingRepository(TextRepository):
             label = (a.start_offset, a.end_offset, a.label.text)
             label_per_user[a.user.username].append(label)
         return label_per_user
+
 
 
 class Seq2seqRepository(TextRepository):

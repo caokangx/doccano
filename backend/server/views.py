@@ -13,7 +13,7 @@ from django.views.generic.list import ListView
 
 from app import settings
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 
 class IndexView(TemplateView):
