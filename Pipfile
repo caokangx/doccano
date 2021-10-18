@@ -1,5 +1,5 @@
 [[source]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
@@ -46,13 +46,14 @@ lockfile = "*"
 gunicorn = "*"
 fasteners = "*"
 auto-labeling-pipeline = "*"
-dj-rest-auth = "*"
+dj-rest-auth = {extras = ["with_social"], version = "*"}
 django-drf-filepond = "*"
 celery = "*"
 django-celery-results = "*"
 sqlalchemy = "*"
 psycopg2-binary = "*"
 setuptools-scm = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.8"

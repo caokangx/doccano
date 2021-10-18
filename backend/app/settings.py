@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'api.apps.ApiConfig',
     'rest_framework',
     'rest_framework.authtoken',
@@ -60,8 +61,11 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
     'dj_rest_auth',
+    'dj_rest_auth.registration',
     'django_celery_results',
-    'django_drf_filepond'
+    'django_drf_filepond',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 CLOUD_BROWSER_APACHE_LIBCLOUD_PROVIDER = env('CLOUD_BROWSER_LIBCLOUD_PROVIDER', None)

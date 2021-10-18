@@ -7,4 +7,5 @@ export interface RoleItemResponse {
 
 export interface RoleRepository {
   list(): Promise<RoleItem[]>
+  addAnnotator(projectid:string, userid: string, roleid: string): Promise<void>
 }

@@ -12,6 +12,8 @@ export default {
   delete: '删除',
   search: '搜索',
   name: '用户名',
+  project: '项目名',
+  label: '标签名',
   import: '导入',
   export: '导出',
   description: '描述',

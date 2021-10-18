@@ -78,7 +78,7 @@ export default Vue.extend({
   computed: {
     headers() {
       return [
-        { text: this.$t('generic.name'), value: 'name' },
+        { text: this.$t('generic.project'), value: 'name' },
         { text: this.$t('generic.description'), value: 'description' },
         // { text: this.$t('generic.type'), value: 'projectType' },
         { text: '最近更新', value: 'updatedAt' },

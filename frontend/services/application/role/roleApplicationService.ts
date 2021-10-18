@@ -10,4 +10,8 @@ export class RoleApplicationService {
     const items = await this.repository.list()
     return items.map(item => new RoleDTO(item))
   }
+
+  public async addAnnotator(projectid: string, userid: string, roleid: string) {
+    await this.repository.addAnnotator(projectid, userid, roleid)
+  }
 }

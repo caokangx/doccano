@@ -1,13 +1,18 @@
+<!--
+程序名：网站登录页面
+-->
 <template>
   <v-app id="inspire">
     <v-main>
-      <v-container class="fill-height" fluid>
+      <!-- <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
           <v-col cols="12" sm="8" md="4">
-            <form-login :login="authenticateUser" />
+            
           </v-col>
         </v-row>
-      </v-container>
+        
+      </v-container> -->
+      <form-login-2 :login="authenticateUser" />
     </v-main>
   </v-app>
 </template>
@@ -15,26 +20,14 @@
 <script lang="ts">
 import Vue from "vue";
 import { mapActions } from "vuex";
-import FormLogin from "@/components/auth/FormLogin.vue";
+import FormLogin2 from "@/components/auth/FormLogin2.vue";
 
 export default Vue.extend({
   components: {
-    FormLogin,
+    FormLogin2
   },
-  // mounted() {
-  //   this.print()
-  // },
   methods: {
     ...mapActions("auth", ["authenticateUser"]),
-    // print() {
-    //   console.log(this.$route.fullPath)
-    // }
   },
-
-  // middleware({store, redirect}) {
-  //   if(!store.state.getters['auth/isAuthenticated']) {
-  //     console.log('111')
-  //   }
-  // }
 });
 </script>

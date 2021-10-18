@@ -77,7 +77,7 @@ export default Vue.extend({
   computed: {
     headers() {
       return [
-        { text: this.$t('generic.name'),    value: 'text' },
+        { text: this.$t('generic.label'),    value: 'text' },
         { text: this.$t('labels.shortkey'), value: 'suffixKey' },
         // { text: this.$t('labels.color'),    value: 'backgroundColor' },
         { text: '修改', value: 'actions', sortable: false },

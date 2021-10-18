@@ -1,8 +1,12 @@
+<!-- 
+程序名：登录表单
+-->
 <template>
   <base-card
     :disabled="!valid"
-    :title="$t('user.login')"
+    :title="$t('user.logintitle')"
     :agree-text="$t('user.login')"
+    :cancel-text="$t('user.registration')"
     @agree="tryLogin"
   >
     <template #content>
@@ -17,9 +21,9 @@
         </v-alert> -->
         <v-text-field
           v-model="username"
-          :label="$t('user.username')"
+          :label="$t('请输入用户名')"
           name="username"
-          prepend-icon="person"
+          append-icon="person"
           type="text"
           autofocus
           @keyup.enter="tryLogin"
@@ -27,9 +31,9 @@
         <v-text-field
           id="password"
           v-model="password"
-          :label="$t('user.password')"
+          :label="$t('请输入密码')"
           name="password"
-          prepend-icon="lock"
+          append-icon="lock"
           type="password"
           @keyup.enter="tryLogin"
         />
@@ -39,9 +43,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { userNameRules, passwordRules } from '@/rules/index'
-import BaseCard from '@/components/utils/BaseCard.vue'
+import Vue from "vue";
+import { userNameRules, passwordRules } from "@/rules/index";
+import BaseCard from "@/components/utils/BaseCard.vue";
 
 export default Vue.extend({
   components: {
@@ -51,18 +55,18 @@ export default Vue.extend({
   props: {
     login: {
       type: Function,
-      default: (username: string, password: string) => Promise
-    }
+      default: (username: string, password: string) => Promise,
+    },
   },
   data() {
     return {
       valid: false,
-      username: '',
-      password: '',
+      username: "",
+      password: "",
       userNameRules,
       passwordRules,
-      showError: false
-    }
+      showError: false,
+    };
   },
 
   methods: {
@@ -70,20 +74,20 @@ export default Vue.extend({
       try {
         await this.login({
           username: this.username,
-          password: this.password
-        })
+          password: this.password,
+        });
         // console.log(this.$route.fullPath.slice(25))
         // TODO: 匹配url
-        if(this.$route.fullPath === '/'){
-          this.$router.push(this.localePath('/projects'))
+        if (this.$route.fullPath === "/") {
+          this.$router.push(this.localePath("/projects"));
         } else {
-          const str = '/projects/' + this.$route.fullPath.slice(25)
-          this.$router.push(this.localePath(str))
+          const str = "/projects/" + this.$route.fullPath.slice(25);
+          this.$router.push(this.localePath(str));
         }
       } catch {
-        this.showError = true
+        this.showError = true;
       }
-    }
-  }
-})
+    },
+  },
+});
 </script>
