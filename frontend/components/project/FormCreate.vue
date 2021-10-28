@@ -26,7 +26,7 @@
           required
           @input="updateValue('description', $event)"
         />
-        <!-- <v-select
+        <v-select
           :value="projectType"
           :items="projectTypes"
           :rules="projectTypeRules($t('rules.projectTypeRules'))"
@@ -41,14 +41,14 @@
           <template v-slot:selection="props">
             {{ translateTypeName(props.item, $t('overview.projectTypes')) }}
           </template>
-        </v-select> -->
-        <!-- <v-checkbox
+        </v-select>
+        <v-checkbox
           v-if="hasSingleLabelOption"
           :value="singleClassClassification"
           label="Allow single label"
           @change="updateValue('singleClassClassification', $event === true)"
         />
-        <v-checkbox
+        <!-- <v-checkbox
           :value="enableRandomOrder"
           :label="$t('overview.randomizeDocOrder')"
           @change="updateValue('enableRandomOrder', $event === true)"
