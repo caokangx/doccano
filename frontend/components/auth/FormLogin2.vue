@@ -92,8 +92,8 @@ export default Vue.extend({
       showError: false,
 
       formRule: {
-        username: [(v) => !!v || this.$t('用户名不能为空', ['username'])],
-        password: [(v) => !!v || this.$t('密码不能为空', ['password'])],
+        username: [(v: any) => !!v || this.$t('用户名不能为空', ['username'])],
+        password: [(v: any) => !!v || this.$t('密码不能为空', ['password'])],
       },
     //   socialIcons: [
     //     {
@@ -186,7 +186,7 @@ export default Vue.extend({
           }
           console.log('success')
 
-          const route = redirect ? {path: redirect} : {path: '/projects'}
+          const route: any = redirect ? {path: redirect} : {path: '/projects'}
           this.$router.push(route)
         } else {
           try {
@@ -203,7 +203,7 @@ export default Vue.extend({
         }
     },
     tryRegister() {
-      console.log(this.$refs.form.validate())
+      // console.log(this.$refs.form.validate())
     },
     trySocialLogin() {},
   },

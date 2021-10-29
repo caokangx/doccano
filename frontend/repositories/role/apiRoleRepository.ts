@@ -14,7 +14,7 @@ export class APIRoleRepository implements RoleRepository {
     return responseItems.map(item => RoleItem.valueOf(item))
   }
 
-  async addAnnotator(projectid: string, userid: string, roleid: string) : Promise<void> {
+  async addAnnotator(projectid: any, userid: string, roleid: string) : Promise<void> {
     const url = `/projects/${projectid}/roles`
     const user = userid
     const role = roleid
