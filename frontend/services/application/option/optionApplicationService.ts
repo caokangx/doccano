@@ -9,6 +9,7 @@ export class OptionApplicationService {
 
   public findOption(projectId: string): OptionDTO {
     const item = this.repository.findById(projectId)
+    item.page = 1
     return new OptionDTO(item)
   }
 

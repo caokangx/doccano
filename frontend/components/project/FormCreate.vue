@@ -45,15 +45,15 @@
         <v-checkbox
           v-if="hasSingleLabelOption"
           :value="singleClassClassification"
-          label="Allow single label"
+          label="允许单个标签"
           @change="updateValue('singleClassClassification', $event === true)"
         />
-        <!-- <v-checkbox
+        <v-checkbox
           :value="enableRandomOrder"
           :label="$t('overview.randomizeDocOrder')"
           @change="updateValue('enableRandomOrder', $event === true)"
         />
-        <v-checkbox
+        <!-- <v-checkbox
           :value="enableShareAnnotation"
           :label="$t('overview.shareAnnotations')"
           @change="updateValue('enableShareAnnotation', $event === true)"

@@ -21,6 +21,7 @@
     <v-main class="pb-0">
       <nuxt />
     </v-main>
+    <the-footer />
   </v-app>
 </template>
 
@@ -28,13 +29,15 @@
 import { mapGetters } from 'vuex'
 import TheHeader from '~/components/layout/TheHeader'
 import TheSideBar from '~/components/layout/TheSideBar'
+import TheFooter from '~/components/layout/TheFooter'
 
 export default {
   middleware: ['check-auth', 'auth', 'set-project'],
 
   components: {
     TheSideBar,
-    TheHeader
+    TheHeader,
+    TheFooter
   },
 
   data() {

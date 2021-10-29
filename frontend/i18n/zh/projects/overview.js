@@ -13,7 +13,7 @@ export default {
   search: '搜索',
   projectTypes: [
     '文本分类',
-    '序列标注',
-    '序列到序列'
+    '图像分类',
+    '命名实体识别'
   ]
 }

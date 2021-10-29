@@ -27,6 +27,11 @@
       </div>
     </v-stepper>
   </v-card> -->
+  <v-card>
+    <v-card-title>
+      {{ $t("projectHome.welcome") }}
+    </v-card-title>
+  </v-card>
 </template>
 
 <script>

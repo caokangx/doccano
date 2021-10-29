@@ -2,7 +2,7 @@
   <v-app>
     <!-- <the-header /> -->
     <nuxt />
-    <!-- <the-footer /> -->
+    <the-footer />
   </v-app>
 </template>
 
@@ -13,7 +13,7 @@ import TheFooter from '@/components/layout/TheFooter'
 export default {
   middleware: ['check-auth'],
   components: {
-    // TheFooter,
+    TheFooter,
     // TheHeader
   }
 }

@@ -8,14 +8,14 @@
       wrap
     >
       <v-flex
-        black
+        white
         lighten-2
         py-4
         text-center
-        white--text
+        black--text
         xs12
       >
-        &copy; {{ new Date().getFullYear() }} doccano
+        &copy; {{ new Date().getFullYear() }} 由 <a href="http://www.jssi.org.cn/" target="_blank">江苏省缺陷产品管理技术中心</a> 研制
       </v-flex>
     </v-layout>
   </v-footer>

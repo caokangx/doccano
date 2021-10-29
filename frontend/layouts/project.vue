@@ -23,6 +23,7 @@
         </v-layout>
       </v-container>
     </v-main>
+    <the-footer />
   </v-app>
 </template>
 
@@ -30,6 +31,7 @@
 import { mapGetters } from "vuex";
 import TheSideBar from "~/components/layout/TheSideBar";
 import TheHeader from "~/components/layout/TheHeader";
+import TheFooter from '~/components/layout/TheFooter'
 
 export default {
   middleware: ["check-auth", "auth", "check-admin"],
@@ -37,6 +39,7 @@ export default {
   components: {
     TheSideBar,
     TheHeader,
+    TheFooter
   },
 
   data() {
