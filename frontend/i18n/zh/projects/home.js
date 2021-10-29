@@ -1,6 +1,6 @@
 export default {
   home: '主页',
-  welcome: '欢迎进入数据标注平台，点击左上角开始标注',
+  welcome: '欢迎进入数据标注平台，请点击左上角开始标注',
   importData: '导入数据集',
   createLabels: '为这个项目创建标签名',
   addMembers: '添加成员',
