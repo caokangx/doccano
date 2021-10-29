@@ -212,7 +212,6 @@ export default Vue.extend({
 
 <style lang="sass" scoped>
 .page-login
-  &__card
   max-width: 600px
   margin: 0 auto
 </style>
