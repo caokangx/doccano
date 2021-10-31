@@ -15,6 +15,10 @@ $ yarn dev
 $ yarn build
 $ yarn start
 
+# or you can use pm2 to launch server
+$ pm2 start npm --name nuxt -- start
+
+
 # generate static project
 $ yarn generate
 ```
