@@ -27,6 +27,12 @@
         v-shortkey="shortKeys"
         @shortkey="annotateOrRemoveLabel(project.id, example.id, $event.srcKey)"
       >
+        <v-card-text
+          class="title highlight"
+          style="white-space: pre-wrap;"
+          v-text="example.text"
+        />
+        <v-divider />
         <v-card-title>
           <component
             :is="labelComponent"
@@ -37,12 +43,8 @@
             @remove="removeTeacher(project.id, example.id, $event)"
           />
         </v-card-title>
-        <v-divider />
-        <v-card-text
-          class="title highlight"
-          style="white-space: pre-wrap;"
-          v-text="example.text"
-        />
+        
+        
       </v-card>
     </template>
     <template v-slot:sidebar>
