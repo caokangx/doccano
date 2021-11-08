@@ -1,10 +1,12 @@
 import abc
 import itertools
-from collections import defaultdict, Counter
+import logging
+from collections import Counter, defaultdict
 from typing import Dict, Iterator, List
+
 from ...models import Example, Project
 from .data import Record
-import logging
+
 logging.basicConfig(
     format='%(asctime)s-%(pathname)s[%(lineno)d] - %(levelname)s: %(message)s',
     level=logging.INFO
@@ -92,7 +94,7 @@ class TextRepository(BaseRepository):
             if self.project.collaborative_annotation:
                 label_per_user = self.reduce_user(label_per_user)
             counter_by_user = self.counter_by_user(label_per_user)
-            logger.info(counter_by_user)
+            # logger.info(counter_by_user)
             label_merge = dict(label_per_user)
             label_merge.update(counter_by_user)
             for user, label in label_merge.items():
@@ -101,7 +103,8 @@ class TextRepository(BaseRepository):
                     data=doc.text,
                     label=label,
                     user=user,
-                    metadata=doc.meta
+                    # metadata=doc.meta
+                    metadata={}
                 )
             # todo:
             # If there is no label, export the doc with `unknown` user.
@@ -129,8 +132,11 @@ class TextRepository(BaseRepository):
     def counter_by_user(self, label_per_user: Dict[str, List]):
         # logger.info(label_per_user)
         value = list(itertools.chain(*label_per_user.values()))
-        value = Counter(value).most_common(1)[0][0].split(' ')
         # logger.info(value)
+        if value:
+            value = Counter(value).most_common(1)[0][0].split(' ') 
+        else:
+            value = ' '         
         return {'all': value}
 
 
