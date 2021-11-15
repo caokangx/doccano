@@ -8,7 +8,7 @@
             <div class="primary--text display-1">轻量化标注平台</div>
           </v-card-title>
           <v-card-text>
-            <v-alert type="success"> {{ $t('测试用户') }} : admin/qwe123 </v-alert>
+            <v-alert type="success"> {{ $t('测试用户') }} : admin/123456 </v-alert>
             <v-form ref="form" v-model="valid" class="my-10" lazy-validation>
               <v-text-field
                 v-model="username"
